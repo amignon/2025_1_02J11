@@ -2,8 +2,16 @@ import java.util.Scanner;
 public class Curtidas {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Número de Publicações: ");
-        int numeroPublicacoes = entrada.nextInt();
+
+        int numeroPublicacoes;
+        do {
+            System.out.print("Número de Publicações: ");
+            numeroPublicacoes = entrada.nextInt();
+            if (numeroPublicacoes <= 0) {
+                System.out.println("\tInforme um valor positivo!");
+            }
+        } while (numeroPublicacoes <= 0);
+        
         int totalCurtidas = 0; // acumuladora
         for (int i = 1; i <= numeroPublicacoes; i++) {
             System.out.printf("Curtidas de Publicação #%d: ", i);
